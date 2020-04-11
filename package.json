@@ -1,0 +1,33 @@
+{
+  "name": "hackaday-projects",
+  "version": "1.0.0",
+  "description": "Node application ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app",
+    "test": "jest",
+    "testwatch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmeshMaharshi30/hackaday-projects.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Umesh Chinalachi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UmeshMaharshi30/hackaday-projects/issues"
+  },
+  "homepage": "https://github.com/UmeshMaharshi30/hackaday-projects#readme",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jest": "^25.3.0",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
+  }
+}
