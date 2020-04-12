@@ -1,0 +1,16 @@
+<ul>
+    <% projects.forEach(function(project) { %>
+        <li><%= project.id %> - <%= project.url %> - <%= project.name %> - <%= project.summary %></li>
+    <% }); %>
+</ul>
+<ul>
+    <li>
+        <%= pagination.page - 1 %>
+    </li>
+    <li>
+        <%= pagination.page %>
+    </li>
+    <li>
+        <%= pagination.page + 1 %>
+    </li>
+</ul>

@@ -1,5 +1,6 @@
 const API_KEY = "o78Emp1CfQBNNOlF";
 const BASE_URL = "https://api.hackaday.io/v1/projects?api_key=" + API_KEY;
+const request = require('request');
 
 const defaultConfiguration = {
   per_page: 50,
@@ -14,7 +15,6 @@ function generateUrlWithParams(requestParams) {
   initialUrl += ("&page=" + (!requestParams.page ? defaultConfiguration.page : requestParams.page));
   return initialUrl;
 }
-
 
 module.exports = {
     generateUrlWithParams
