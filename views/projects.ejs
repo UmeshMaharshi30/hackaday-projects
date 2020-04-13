@@ -1,16 +1,29 @@
-<ul>
+<style>
+    table {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+</style>
+<table>
     <% projects.forEach(function(project) { %>
-        <li><%= project.id %> - <%= project.url %> - <%= project.name %> - <%= project.summary %></li>
-    <% }); %>
-</ul>
+  <tr>
+    <td><img src=<%= project.image_url %> alt="project logo" width="400" height="300"></td>
+    <td><%= project.summary %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= project.name %></td>
+  </tr>
+  <% }); %>
+</table>
 <ul>
-    <li>
-        <%= pagination.page - 1 %>
-    </li>
-    <li>
-        <%= pagination.page %>
-    </li>
-    <li>
-        <%= pagination.page + 1 %>
-    </li>
+  <li>
+    <%= pagination.page - 1 %>
+  </li>
+  <li>
+    <%= pagination.page %>
+  </li>
+  <li>
+    <%= pagination.page + 1 %>
+  </li>
 </ul>
