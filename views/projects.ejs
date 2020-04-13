@@ -1,29 +1,60 @@
-<style>
-    table {
-        margin: auto;
-        width: 50%;
-        text-align: center;
+
+<head>
+    <style>
+    
+        .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 800px;
+      height: 400px;
+      margin: 10px;
     }
-</style>
-<table>
+    
+    .card > img {
+        display: inline-block;
+    }
+    .card > div {
+        display: inline-block;
+    }
+    
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    .container {
+      padding: 2px 16px;
+      display: inline-block;
+    }
+    
+    </style>
+
+    <script>
+        function onHover(projectData) {
+            console.log(projectData.id);
+        }
+    </script>
+</head>
+
+<body>
     <% projects.forEach(function(project) { %>
-  <tr>
-    <td><img src=<%= project.image_url %> alt="project logo" width="400" height="300"></td>
-    <td><%= project.summary %></td>
-  </tr>
-  <tr>
-    <td colspan="2"><%= project.name %></td>
-  </tr>
-  <% }); %>
-</table>
+        <a href="/project/<%= project.name %>" > <div class="card" onmouseover="onHover(<%= JSON.stringify(project) %>)">
+            <img src=<%= project.image_url %> alt="<%= project.name %> logo" style="width:50%; height: 400px">
+            <div class="container">
+              <h4><b><%= project.name %></b></h4> 
+              <p><%= project.summary %></p> 
+            </div>
+        </div>
+    </a>
+<% }); %>
 <ul>
-  <li>
-    <%= pagination.page - 1 %>
-  </li>
-  <li>
-    <%= pagination.page %>
-  </li>
-  <li>
-    <%= pagination.page + 1 %>
-  </li>
+<li>
+<%= pagination.page - 1 %>
+</li>
+<li>
+<%= pagination.page %>
+</li>
+<li>
+<%= pagination.page + 1 %>
+</li>
 </ul>
+</body>

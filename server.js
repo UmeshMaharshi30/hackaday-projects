@@ -108,7 +108,15 @@ app.get("/hackaday", async function (req, res) {
 });
 
 app.get("/project/:id", async function (req, res) {
-  res.end();
+
+  fs.readFile("project-details.json", (err, data) => {
+    if (err) throw err;
+    const hackadayResponse = JSON.parse(data);
+    //fs.writeFileSync("dummy.json", body);
+    res.render("project", {
+      project: hackadayResponse      
+    });
+  });    
 });
 
 module.exports = app;

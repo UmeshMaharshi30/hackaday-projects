@@ -1,0 +1,62 @@
+<head>
+    <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+    .project-item {
+        display: flex;
+    }
+    .project-item div {
+        padding: 10px;
+    }
+    .project-item img {
+        width: 400px;
+        height: 340px;
+    }
+
+.tag-item {
+    display: inline-block;
+}
+
+    </style>
+    </head>
+    <body>
+    <h1 style="text-align: center;"><%= project.name %></h1>
+    <div class="container">
+        <div class="project-item">
+            <div><img src=<%= project.image_url %> alt=<%= project.name%>" logo"></div>
+        <div>
+            <div>
+                <p>Description</p>
+                <p><%= project.description %></p>
+            </div>
+            <div>
+                <p>Summary</p>
+                <p><%= project.summary %></p>
+            </div>
+            <p>Views : <%= project.views %> Comments : <%= project.comments %> Folowers : <%= project.folowers %> Likes : <%= project.skulls %></p>
+        </div>
+        </div> 
+        <div>
+            <% project.tags.forEach(function(tag) { %>
+                <p class="tag-item"><%= tag %></p>
+            <% }); %>
+        </div>
+    </div>
+    </body>
